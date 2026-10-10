@@ -1,0 +1,12 @@
+services:
+  legalease:
+    build: .
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      BACKEND_URL: ${BACKEND_URL:-http://127.0.0.1:8000}
+      MOCK_AI: ${MOCK_AI:-false}
+      MAX_DOCUMENT_CHARS: ${MAX_DOCUMENT_CHARS:-50000}
